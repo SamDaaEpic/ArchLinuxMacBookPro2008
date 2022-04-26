@@ -35,7 +35,7 @@ station wlan0 get-networks
 station wlan0 connect "<name of the wifi network>"
 ```
 
-## correct the system clock in the archiso
+## Correct the system clock in the archiso
 
 Make sure the system clock is accurate in the archiso
 
@@ -47,10 +47,22 @@ timedatetl set-ntp true
 
 **This is only for if you dont have macos installed**
 
-Create 3 partitions of **2GB** for swap, **512MB** for boot efi partition and **you-decide** for the root partition
+Create 3 partitions of **2GB** for swap, **512MB** for boot efi partition and **xxxGB** for the root partition
 
 ```
 cfdisk
+```
+ Now create the filesystems on the partitions you've created (change the partition letter according to your letters)
+
+```
+lsblk
+├─sda1   8:4    0   2.1G  0 part
+├─sda2   8:5    0   512M  0 part
+├─sda3   8:6    0  51.3G  0 part 
+
+mkfs.ext4 /dev/sda3
+mkfs.fat -F 32 /dev/sda2
+mkswap /dev/sda1
 ```
 
 
