@@ -62,9 +62,54 @@ lsblk
 ```
 
 ```
-mkfs.ext4 /dev/sda3
-mkfs.fat -F 32 /dev/sda2
 mkswap /dev/sda1
+mkfs.fat -F 32 /dev/sda2
+mkfs.ext4 /dev/sda3
+```
+
+## Mount the partitions and install the base packages
+
+Mount the partitions to /mnt (again, replace the partition letters according to your hard drive partition letters)
+
+```
+lsblk
+├─sda1   8:4    0   2.1G  0 part
+├─sda2   8:5    0   512M  0 part
+├─sda3   8:6    0  51.3G  0 part 
+```
+
+```
+mount /dev/sda3 /mnt
+mkdir /mnt/boot
+mkdir /mnt/boot/efi
+mount /dev/sda2 /boot/efi
+swapon /dev/sda1
+```
+
+Install the base packages to /mnt (you can choose any linux kernel but personally i prefer linux-lts since the latest kernel breaks in every 1 wekk on these old macbooks)
+
+```
+pacstrap /mnt base linux-lts linux-lts-headers linux-firmware intel-ucode nano
+```
+
+Generate the fstab So the partitons gets mounted every time your system boots up
+
+```
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+## Configure the installed system in /mnt
+
+Chroot into /mnt
+
+```
+arch-chroot /mnt
+```
+
+**Setup the TimeZone**
+
+```
+ln -sf /usr/share/zoneinfo/ **Region** /**City**
 ```
 
 
