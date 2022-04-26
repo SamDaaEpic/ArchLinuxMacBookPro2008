@@ -2,4 +2,5 @@
 How to install Arch Linux on MacBook Pro 2008 with nvidia proprietary drivers.
 
 # Arch Installation
-/Arch iso/
+
+**Download the ArchLinux ISO**
