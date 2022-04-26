@@ -12,6 +12,27 @@ Boot into the archlinux iso by pluging in the usb drive (to which you have flash
 First of all unload all the other wifi drivers
 
 ```
-rmmod b43 bcma ssb
+rmmod b43 bcma ssb wl
 ```
+
+Load the wifi driver for the macbook
+
+```
+modprobe wl
+```
+
+restart iwd (so it can recognize the wifi card)
+
+```
+systemctl restart iwd
+```
+
+Connect to wifi with iwctl (type the station commands in the iwctl shell)
+
+```
+iwctl
+station wlan0 get-networks
+station wlan0 connect "<name of the wifi network>"
+```
+
 
