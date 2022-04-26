@@ -59,7 +59,9 @@ lsblk
 ├─sda1   8:4    0   2.1G  0 part
 ├─sda2   8:5    0   512M  0 part
 ├─sda3   8:6    0  51.3G  0 part 
+```
 
+```
 mkfs.ext4 /dev/sda3
 mkfs.fat -F 32 /dev/sda2
 mkswap /dev/sda1
