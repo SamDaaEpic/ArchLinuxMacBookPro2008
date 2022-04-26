@@ -98,7 +98,7 @@ Generate the fstab So the partitons gets mounted every time your system boots up
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-## Configure the installed system in /mnt
+## Chroot into /mnt
 
 Chroot into /mnt
 
@@ -106,13 +106,15 @@ Chroot into /mnt
 arch-chroot /mnt
 ```
 
-**Setup the TimeZone (type in your region and city in the correct place)**
+## Setup the TimeZone
+
+create a hardlink of our timezone to /etc/localtime (type in your region and city in the correct place)
 
 ```
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 ```
 
-For me it is
+Example of region Asia and city Kolkata
 
 ```
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
@@ -123,5 +125,56 @@ generate /etc/adjtime
 ```
 hwclock --systohc
 ```
+
+## generate Locale
+
+comment out your locale (for me it is en_US.UTF-8 UTF-8)
+
+```
+nano /etc/locale.gen
+```
+Generate the locale you've commented out
+
+```
+locale-gen
+```
+
+create /etc/locale.conf file (so that your system can know what locale you're using)
+
+```
+nano /etc/locale.conf
+```
+
+type in /etc/locale.conf (or en_US)
+
+```
+LANG=en_US.UTF-8
+```
+
+## Configure Hostname
+
+```
+nano /etc/hostname
+```
+
+```
+<your hostname goes here>
+```
+ 
+ ## Set the Root Password
+ 
+ ```
+ passwd
+ ```
+ 
+ ## Setup /etc/hosts 
+ 
+ ```
+ nano /etc/hosts
+ ```
+ 
+ ```
+127.0.0.1       localhost
+ ```
 
 
