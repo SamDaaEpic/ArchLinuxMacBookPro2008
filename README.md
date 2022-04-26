@@ -106,13 +106,22 @@ Chroot into /mnt
 arch-chroot /mnt
 ```
 
-**Setup the TimeZone**
+**Setup the TimeZone (type in your region and city in the correct place)**
 
 ```
-ln -sf /usr/share/zoneinfo/ **Region** /**City**
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 ```
 
+For me it is
 
+```
+ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+```
 
+generate /etc/adjtime
+
+```
+hwclock --systohc
+```
 
 
