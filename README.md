@@ -487,5 +487,6 @@ EndSection
 
 ```
   
+## Nvidia proprietary drivers installtion is done you can now reboot and start using ARCHLINUX
 
 
