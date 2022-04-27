@@ -394,7 +394,6 @@ Section "Device"
     Identifier     "Device0"
     Driver         "nvidia"
     VendorName     "NVIDIA Corporation"
-    BoardName      "GeForce 9400M"
 EndSection
 
 Section "Screen"
@@ -437,9 +436,9 @@ Section "Files"
     ModulePath      "/usr/lib64/xorg/modules"
 EndSection
 
-Section "ServerFlags"
-    Option         "IgnoreABI" "1"
-EndSection
+Section "ServerFlags"                            ## This is the new line added
+    Option         "IgnoreABI" "1"               ## This is the new line added
+EndSection                                       ## This is the new line added
 
 Section "InputDevice"
 
@@ -472,8 +471,8 @@ Section "Device"
     Identifier     "Device0"
     Driver         "nvidia"
     VendorName     "NVIDIA Corporation"
-    BoardName      "GeForce 9400M"
-    BusID          "PCI:3:0:0"
+    BoardName      "GeForce 9400M"               ## This is the new line added
+    BusID          "PCI:3:0:0"                   ## This is the new line added
 EndSection
 
 Section "Screen"
