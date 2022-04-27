@@ -134,10 +134,13 @@ comment out your locale (for me it is en_US.UTF-8 UTF-8)
 nano /etc/locale.gen
 ```
 
-/etc/locale.gen
 ```
+-------------------------|
+/etc/locale.gen          | 
+-------------------------|
 en_US.UTF-8 UTF-8
 ```
+
 
 Generate the locale you've commented out
 
