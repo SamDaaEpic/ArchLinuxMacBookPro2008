@@ -126,7 +126,7 @@ generate /etc/adjtime
 hwclock --systohc
 ```
 
-## generate Locale
+## Generate Locale
 
 comment out your locale (for me it is en_US.UTF-8 UTF-8)
 
@@ -206,7 +206,7 @@ nano /etc/hostname
 
  ```
  
- ## Install basic packages with xfce and xorg
+ ## Install basic packages Including xfce and xorg
  
  ```
  pacman -S efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel git reflector bluez bluez-utils pulseaudio pulseaudio-bluetooth alsa-utils xdg-utils xdg-user-dirs broadcom-wl-dkms xorg xfce4 xfce4-goodies lightdm
