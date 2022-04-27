@@ -216,7 +216,7 @@ nano /etc/hostname
  pacman -S efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel git reflector bluez bluez-utils pulseaudio pulseaudio-bluetooth alsa-utils xdg-utils xdg-user-dirs broadcom-wl-dkms xorg xfce4 xfce4-goodies lightdm
  ```
  
- ## Install and configure GRUB
+ ## Install and Configure GRUB
  
  Install grub
  
@@ -232,7 +232,7 @@ nano /etc/hostname
  
  **This step is very important, if you dont do this you will not see the archlinux in the macbook startup manager**
  
- copy the efi files to the correct directory do that your macbook can detect archlinux
+ copy the efi files to the correct directory so that your macbook can detect archlinux
  
  
  ```
