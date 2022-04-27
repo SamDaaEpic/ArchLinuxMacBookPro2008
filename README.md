@@ -134,10 +134,9 @@ comment out your locale (for me it is en_US.UTF-8 UTF-8)
 nano /etc/locale.gen
 ```
 
+Comment out this line in the /etc/locale.gen file
+
 ```
--------------------------|
-/etc/locale.gen          | 
--------------------------|
 en_US.UTF-8 UTF-8
 ```
 
@@ -154,7 +153,7 @@ create /etc/locale.conf file (so that your system can know what locale you're us
 nano /etc/locale.conf
 ```
 
-type in /etc/locale.conf (or en_US)
+type in /etc/locale.conf (for en_US)
 
 ```
 LANG=en_US.UTF-8
