@@ -40,7 +40,7 @@ station wlan0 connect "<name of the wifi network>"
 Make sure the system clock is accurate in the archiso
 
 ```
-timedatetl set-ntp true
+timedatectl set-ntp true
 ```
 
 ## Setup the partitions
