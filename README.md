@@ -509,3 +509,26 @@ EndSection
 ## Nvidia proprietary drivers installtion is done you can now reboot and start using ARCHLINUX
 
 
+# If you have dual booted and want grub to show the option to boot into macos Follow these steps.
+
+```
+sudo nano /etc/grub.d/40_custom
+```
+
+Type this in /etc/grub.d/40_custom
+
+```
+menuentry "MacOSX" --class "macosx" {
+  # Search the root device for Mac OS X's loader.
+  search --file --no-floppy --set=root /usr/standalone/i386/boot.efi
+  # chainload the loader, pass parameters like -v directly
+  chainloader (${root})/usr/standalone/i386/boot.efi #-v
+}
+
+```
+
+After that just update your grub config and macos should appear in grub
+
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
