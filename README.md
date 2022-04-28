@@ -301,7 +301,7 @@ First of all go into the tty and stop lightdm (because the gui will crash while 
  sudo wget https://raw.githubusercontent.com/SamDaaEpic/ArchLinuxMacBookPro2008/main/xorg.conf
  sudo cp xorg.conf /etc/X11/xorg.conf
  ```
- **Now after doing this just reboto and nvidia proprietary drivers should work**
+ **Now after doing this just reboot and nvidia proprietary drivers should work**
  
 ## Manual method of setting up the xorg.conf
  
