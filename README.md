@@ -213,7 +213,7 @@ nano /etc/hostname
  ## Install basic packages Including xfce and xorg
  
  ```
- pacman -S efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel git reflector bluez bluez-utils pulseaudio pulseaudio-bluetooth alsa-utils xdg-utils xdg-user-dirs broadcom-wl-dkms xorg xfce4 xfce4-goodies lightdm
+ pacman -Sy efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel git reflector bluez bluez-utils pulseaudio pulseaudio-bluetooth alsa-utils xdg-utils xdg-user-dirs broadcom-wl-dkms xorg xfce4 xfce4-goodies lightdm
  ```
  
  ## Install and Configure GRUB
