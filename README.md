@@ -86,7 +86,7 @@ lsblk
 mount /dev/sda3 /mnt
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
-mount /dev/sda2 /boot/efi
+mount /dev/sda2 /mnt/boot/efi
 swapon /dev/sda1
 ```
 
