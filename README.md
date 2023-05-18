@@ -90,7 +90,7 @@ mount /dev/sda2 /mnt/boot/efi
 swapon /dev/sda1
 ```
 
-Install the base packages to /mnt (you can choose any linux kernel but personally i prefer linux-lts since the latest kernel breaks in every 1 wekk on these old macbooks)
+Install the base packages to /mnt (you can choose any linux kernel but personally i prefer linux-lts since the latest kernel breaks in every 1 week on these old macbooks)
 
 ```
 pacstrap /mnt base linux-lts linux-lts-headers linux-firmware intel-ucode nano
@@ -262,7 +262,7 @@ nano /etc/hostname
 First of all go into the tty and stop lightdm (because the gui will crash while installing nvidia drivers and we dont want that, we will do everything in tty)
 
  Press **FN+Ctrl+Alt+F2** to go into tty and login with your username and password (dont login as root)
- 
+  
  install yay
  
  ```
@@ -270,11 +270,22 @@ First of all go into the tty and stop lightdm (because the gui will crash while 
  cd yay
  makepkg -si
  ```
+ Enable MultiLib repo to install the lib32 packages for Nvidia
+ edit the /etc/pacman.conf
+ ```
+ nano /etc/pacman.conf
+ ```
  
- After yay has installed, install nvidia drivers with yay
+ in /etc/pacman.conf comment out this line by removing the **#** (You can find it close to the end of the file)
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+
+ After yay has installed and Multilib is enabled, install nvidia drivers with yay
  
  ```
- yay -S nvidia-340xx-dkms nvidia-340xx-utils lib32-nvidia-340xx-utils
+ yay -S nvidia-340xx-lts-dkms nvidia-340xx-utils lib32-nvidia-340xx-utils
  ```
  
  After nvidia drivers are done installing blacklist the nouveau driver so it dosent get loaded on boot
