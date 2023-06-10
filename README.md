@@ -216,6 +216,19 @@ nano /etc/hostname
  pacman -Sy efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel git reflector bluez bluez-utils pulseaudio pulseaudio-bluetooth alsa-utils xdg-utils xdg-user-dirs broadcom-wl-dkms xorg xfce4 xfce4-goodies lightdm
  ```
  
+ ## Enable Wheel Group for Sudo privileges
+ edit the /etc/sudoers file and uncomment the following line near the end of the file.
+
+ ```
+ nano /etc/sudoers
+ ```
+
+ ```
+ /etc/sudoers
+ ----------------------------------------------------------------
+ %wheel ALL=(ALL:ALL) ALL     # Remove The Hashtag in front of it
+ ```
+ 
  ## Install and Configure GRUB
  
  Install grub
@@ -285,7 +298,7 @@ Include = /etc/pacman.d/mirrorlist
  After yay has installed and Multilib is enabled, install nvidia drivers with yay
  
  ```
- yay -S nvidia-340xx-lts-dkms nvidia-340xx-utils lib32-nvidia-340xx-utils
+ yay -Sy nvidia-340xx-lts-dkms nvidia-340xx-utils lib32-nvidia-340xx-utils
  ```
  
  After nvidia drivers are done installing blacklist the nouveau driver so it dosent get loaded on boot
