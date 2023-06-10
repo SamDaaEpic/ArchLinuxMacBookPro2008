@@ -222,10 +222,8 @@ nano /etc/hostname
  ```
  nano /etc/sudoers
  ```
-
- ```
  /etc/sudoers
- ----------------------------------------------------------------
+ ```
  %wheel ALL=(ALL:ALL) ALL     # Remove The Hashtag in front of it
  ```
  
