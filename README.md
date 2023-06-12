@@ -39,14 +39,6 @@ station wlan0 get-networks
 station wlan0 connect "<name of the wifi network>"
 ```
 
-## Correct the system clock in the archiso
-
-Make sure the system clock is accurate in the archiso
-
-```
-timedatectl set-ntp true
-```
-
 ## Setup the partitions
 
 **This is only for if you dont have macos installed**
@@ -128,6 +120,12 @@ generate /etc/adjtime
 
 ```
 hwclock --systohc
+```
+
+Make Sure The Clock Is Syncronized
+
+```
+timedatectl set-ntp true
 ```
 
 ## Generate Locale
