@@ -11,6 +11,12 @@ Download the ArchLinux iso: https://archlinux.org/download
 
 Boot into the archlinux iso by pluging in the usb drive (to which you have flashed the arch iso) into the macbook and holding down the Option key on the keyboard
 
+## Disable Annoying Kernel Messages
+To Disable the annoying kernel messages you get while in the TTY, do this
+```
+setterm -msg off
+```
+
 ## Connect to WIFI
 
 First of all unload all the other wifi drivers
